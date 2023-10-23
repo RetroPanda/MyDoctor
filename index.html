@@ -65,7 +65,7 @@ function showAboutTrue(){
 }
 
 function showAboutFalse(){
-        document.getElementById("about-content").style.display = "none"
+    document.getElementById("about-content").style.display = "none"
 }
 
 function showDoctorsTrue(){
@@ -88,18 +88,18 @@ function showServicesTrue(){
 }
 
 function showServicesFalse(){
-        document.getElementById("services-content").style.display = "none"
+    document.getElementById("services-content").style.display = "none"
 }
 
 function showHomeTrue(){
     showDoctorsFalse();
     showAboutFalse();
     showServicesFalse();
-        document.getElementById("home-content").style.display = "flex";
+    document.getElementById("home-content").style.display = "flex";
 }
 
 function showHomeFalse(){
-        document.getElementById("home-content").style.display = "none"
+    document.getElementById("home-content").style.display = "none"
 }
 
         </script>
@@ -311,15 +311,6 @@ function showHomeFalse(){
 
     <script src="script.js"></script>
     <script> includeHTMLSnippet();</script>
-    <script> 
-    if(showAbout){
-        document.getElementById("about-content").style.display = "flex"
-    }else{
-        document.getElementById("about-content").style.display = "none"
-    
-    }
-    </script> 
-
 </body>
 
 </html>
