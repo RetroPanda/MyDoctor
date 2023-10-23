@@ -9,6 +9,52 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function includeHTMLSnippet() {
+            alert("Running");
+        
+            // Traverse the collection of all
+            // HTML elements
+            id = document.getElementsByTagName("*");
+            for (i = 0; i < id.length; i++) {
+                element = id[i];
+         
+                // Search for elements with
+                // specific attributes
+                file = element.getAttribute(
+                    "mydr-include-html-snippet");
+         
+                if (file) {
+         
+                    // Create an HTTP request with
+                    // the attribute value as the
+                    // file name
+                    xmlRequest = new XMLHttpRequest();
+                    xmlRequest.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                element.innerHTML = this.responseText;
+                            }
+         
+                            if (this.status == 404) {
+                                element.innerHTML = "Page not found.";
+                            }
+         
+                            // Delete the attribute and
+                            // call this function again.
+                            element.removeAttribute(
+                                "mydr-include-html-snippet");
+         
+                            includeHTMLSnippet();
+                        }
+                    }
+                    xmlRequest.open("GET", file, true);
+                    xmlRequest.send();
+                    return; // Exit function.
+                }
+            }
+        };
+        </script>
 </head>
 
 <body>
