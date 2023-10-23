@@ -62,12 +62,8 @@ function showAboutTrue(){
 function showAboutFalse(){
     showAbout=false;
 }
-if(showAbout){
-    document.getElementById("about-content").style.display = "flex"
-}else{
-    document.getElementById("about-content").style.display = "none"
 
-}
+
         </script>
         
 </head>
@@ -274,6 +270,14 @@ if(showAbout){
 
     <script src="script.js"></script>
     <script> includeHTMLSnippet();</script>
+    <script> 
+    if(showAbout){
+        document.getElementById("about-content").style.display = "flex"
+    }else{
+        document.getElementById("about-content").style.display = "none"
+    
+    }
+    </script> 
 
 </body>
 
