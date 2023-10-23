@@ -57,10 +57,22 @@
 function showAboutTrue(){
     alert("showAbout");
     showAbout=true;
+    if(showAbout){
+        document.getElementById("about-content").style.display = "flex"
+    }else{
+        document.getElementById("about-content").style.display = "none"
+    
+    }
 }
 
 function showAboutFalse(){
     showAbout=false;
+    if(showAbout){
+        document.getElementById("about-content").style.display = "flex"
+    }else{
+        document.getElementById("about-content").style.display = "none"
+    
+    }
 }
 
 
