@@ -59,23 +59,8 @@
           </a>
         </div>
       </div>
-
-    <section id="booking">
-        <h2>Book an Appointment</h2>
-        <form id="bookingForm">
-            <label for="doctor">Select a Doctor:</label>
-            <select id="doctor" name="doctor">
-                <option value="Dr. John Doe">Dr. John Doe (Cardiology)</option>
-                <option value="Dr. Jane Smith">Dr. Jane Smith (Pediatrics)</option>
-                <!-- Add more doctor options here -->
-            </select>
-            <label for="date">Select a Date:</label>
-            <input type="date" id="date" name="date" required>
-            <label for="time">Select a Time:</label>
-            <input type="time" id="time" name="time" required>
-            <button type="submit">Book Appointment</button>
-        </form>
-    </section>
+    
+    <div mydr-include-html-snippet="about.html"></div>
 
     <section id="how-it-works">
         <h2>How it works</h2>
@@ -118,6 +103,24 @@
             Prescription Only: R150<br>
             Completing Medical Insurance forms at Call out Service: R1000</p>
     </section>
+    
+    <section id="booking">
+        <h2>Book an Appointment</h2>
+        <form id="bookingForm">
+            <label for="doctor">Select a Doctor:</label>
+            <select id="doctor" name="doctor">
+                <option value="Dr. John Doe">Dr. John Doe (Cardiology)</option>
+                <option value="Dr. Jane Smith">Dr. Jane Smith (Pediatrics)</option>
+                <!-- Add more doctor options here -->
+            </select>
+            <label for="date">Select a Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Select a Time:</label>
+            <input type="time" id="time" name="time" required>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+
 
     <section id="faq">
         <h2>Frequently asked questions</h2>
@@ -209,6 +212,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script> includeHTMLSnippet();</script>
+
 </body>
 
 </html>
