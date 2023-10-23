@@ -60,6 +60,8 @@ let showServices = false;
 function showAboutTrue(){
     showServicesFalse();
     showDoctorsFalse();
+    showHomeFalse();
+
     showAbout=true;
     if(showAbout){
         document.getElementById("about-content").style.display = "flex"
@@ -82,6 +84,8 @@ function showAboutFalse(){
 function showDoctorsTrue(){
     showAboutFalse();
     showServicesFalse()
+    showHomeFalse();
+
     showDoctors=true;
     if(showDoctors){
         document.getElementById("doctors-content").style.display = "flex"
@@ -104,6 +108,7 @@ function showDoctorsFalse(){
 function showServicesTrue(){
     showDoctorsFalse();
     showAboutFalse();
+    showHomeFalse();
     showServices=true;
     if(showServices){
         document.getElementById("services-content").style.display = "flex"
