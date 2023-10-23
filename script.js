@@ -21,3 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// let showAbout = false;
+
+// function showAboutTrue(){
+//     showAbout=true;
+// }
+// if(showAbout){
+//     document.getElementById("about-content").style.display = "flex"
+// }else{
+//     document.getElementById("about-content").style.display = "none"
+
+// }

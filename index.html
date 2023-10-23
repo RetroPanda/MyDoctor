@@ -52,7 +52,19 @@
                 }
             }
         };
+        let showAbout = false;
+
+function showAboutTrue(){
+    showAbout=true;
+}
+if(showAbout){
+    document.getElementById("about-content").style.display = "flex"
+}else{
+    document.getElementById("about-content").style.display = "none"
+
+}
         </script>
+        
 </head>
 
 <body>
@@ -61,7 +73,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li onclick="showAboutTrue()">About Us</li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="doctors.html">Our Doctors</a></li>
                 <li><a href="#booking">Booking</a></li>
@@ -104,7 +116,7 @@
         </div>
       </div>
     
-    <div mydr-include-html-snippet="about.html"></div>
+    <div id="about-content" mydr-include-html-snippet="about.html"></div>
 
     <section id="how-it-works">
         <h2>How it works</h2>
