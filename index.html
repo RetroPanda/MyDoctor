@@ -52,10 +52,14 @@
                 }
             }
         };
-        let showAbout = false;
+let showAbout = false;
+let showDoctors = false;
+let showHome = true;
+let showServices = false;
 
 function showAboutTrue(){
-    alert("showAbout");
+    showServicesFalse();
+    showDoctorsFalse();
     showAbout=true;
     if(showAbout){
         document.getElementById("about-content").style.display = "flex"
@@ -75,6 +79,71 @@ function showAboutFalse(){
     }
 }
 
+function showDoctorsTrue(){
+    showAboutFalse();
+    showServicesFalse()
+    showDoctors=true;
+    if(showDoctors){
+        document.getElementById("doctors-content").style.display = "flex"
+    }else{
+        document.getElementById("doctors-content").style.display = "none"
+    
+    }
+}
+
+function showDoctorsFalse(){
+    showDoctors=false;
+    if(showDoctors){
+        document.getElementById("doctors-content").style.display = "flex"
+    }else{
+        document.getElementById("doctors-content").style.display = "none"
+    
+    }
+}
+
+function showServicesTrue(){
+    showDoctorsFalse();
+    showAboutFalse();
+    showServices=true;
+    if(showServices){
+        document.getElementById("services-content").style.display = "flex"
+    }else{
+        document.getElementById("services-content").style.display = "none"
+    
+    }
+}
+
+function showServicesFalse(){
+    showServices=false;
+    if(showServices){
+        document.getElementById("services-content").style.display = "flex"
+    }else{
+        document.getElementById("services-content").style.display = "none"
+    
+    }
+}
+
+function showHomeTrue(){
+    showDoctorsFalse();
+    showAboutFalse();
+    showServicesFalse()
+    showHome=true;
+    if(showHome){
+        document.getElementById("home-content").style.display = "flex"
+    }else{
+        document.getElementById("home-content").style.display = "none"
+    
+    }
+}
+function showHomeFalse(){
+    showHome=false;
+    if(showHome){
+        document.getElementById("home-content").style.display = "flex"
+    }else{
+        document.getElementById("home-content").style.display = "none"
+    
+    }
+}
 
         </script>
         
@@ -85,11 +154,10 @@ function showAboutFalse(){
         <h1>Doctor Booking System</h1>
         <nav>
             <ul>
-                <li onclick="showAboutFalse()">Home</li>
+                <li onclick="showHomeTrue()">Home</li>
                 <li onclick="showAboutTrue()">About Us</li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="doctors.html">Our Doctors</a></li>
-                <li><a href="#booking">Booking</a></li>
+                <li onclick="showServicesTrue()">Services</li>
+                <li onclick="showDoctorsTrue()">Our Doctors</li>
             </ul>
         </nav>
     </header>
@@ -130,8 +198,12 @@ function showAboutFalse(){
       </div>
     
     <div id="about-content" mydr-include-html-snippet="about.html"></div>
+    <div id="doctors-content" mydr-include-html-snippet="doctors.html"></div>
+    <div id="services-content" mydr-include-html-snippet="services.html"></div>
 
-    <section id="how-it-works">
+    <div id="home-content">
+
+    <section  id="how-it-works">
         <h2>How it works</h2>
         <p>Booking a visit from My Doctor Family Practice is a simple and hassle-free process. </p>
         Just follow these steps:
@@ -275,7 +347,7 @@ function showAboutFalse(){
             +27 73 536 0203
             info@mydr.co.za</p>
     </section>
-
+</div>
     <footer>
         <p>&copy; 2023 Doctor Booking System</p>
     </footer>
