@@ -110,14 +110,52 @@
             showServicesFalse();
             if (document.getElementById("home-content")) {
 
-            document.getElementById("home-content").style.display = "flex";
+                document.getElementById("home-content").style.display = "flex";
             }
         }
 
         function showHomeFalse() {
             if (document.getElementById("home-content")) {
 
-            document.getElementById("home-content").style.display = "none"
+                document.getElementById("home-content").style.display = "none"
+            }
+        }
+
+        function showContactTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showServicesFalse();
+            showHomeFalse();
+            if (document.getElementById("contact-content")) {
+
+                document.getElementById("contact-content").style.display = "flex";
+            }
+        }
+
+        function showContactFalse() {
+            if (document.getElementById("contact-content")) {
+
+                document.getElementById("contact-content").style.display = "none"
+            }
+        }
+
+        function showFaqsTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showServicesFalse();
+            showHomeFalse();
+            showContactFalse();
+
+            if (document.getElementById("faqs-content")) {
+
+                document.getElementById("faqs-content").style.display = "flex";
+            }
+        }
+
+        function showContactFalse() {
+            if (document.getElementById("faqs-content")) {
+
+                document.getElementById("faqs-content").style.display = "none"
             }
         }
 
@@ -128,19 +166,22 @@
 <body>
     <header>
         <div style="display: flex; margin-top:-50px">
-            <img src="logo.png" style="max-width: 300px;max-height: 400px;"/>
+            <img src="logo.png" style="max-width: 300px;max-height: 400px;" />
         </div>
         <div style=" margin-top:-150px ">
 
             <h1>My Doctor</h1>
-                <nav>
-                    <ul>
-                        <li onclick="showHomeTrue()">Home</li>
-                        <li onclick="showAboutTrue()">About Us</li>
-                        <li onclick="showServicesTrue()">Services</li>
-                        <li onclick="showDoctorsTrue()">Our Doctors</li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li onclick="showHomeTrue()">Home</li>
+                    <li onclick="showAboutTrue()">About Us</li>
+                    <li onclick="showDoctorsTrue()">Our Doctors</li>
+                    <li onclick="showServicesTrue()">Services</li>
+                    <li onclick="showDoctorsTrue()">How it Works</li>
+                    <li onclick="showFaqsTrue()">FAQs</li>
+                    <li onclick="showContactTrue()">Contact Us</li>
+                </ul>
+            </nav>
         </div>
     </header>
     <div class="container" style="width:100%; padding:0px;;">
@@ -155,15 +196,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="la.png" alt="Los Angeles" style="width:100%; height: 300px;">
+                    <img src="arm.jpg" alt="Los Angeles" style="width:50%; height: 360px;">
                 </div>
 
                 <div class="item">
-                    <img src="la.png" alt="Chicago" style="width:100%; height: 300px;">
+                    <img src="laptop.jpg" alt="Chicago" style="width:50%; height: 360px;">
                 </div>
 
                 <div class="item">
-                    <img src="la.png" alt="New york" style="width:100%; height: 300px;">
+                    <img src="work.jpg" alt="New york" style="width:50%; height: 360px;">
                 </div>
             </div>
 
@@ -182,12 +223,44 @@
     <div id="about-content" mydr-include-html-snippet="about.html"></div>
     <div id="doctors-content" mydr-include-html-snippet="doctors.html"></div>
     <div id="services-content" mydr-include-html-snippet="services.html"></div>
+    <div id="how-content" mydr-include-html-snippet="how.html"></div>
+    <div id="faq-content" mydr-include-html-snippet="faq.html"></div>
+    <div id="contact-content" mydr-include-html-snippet="contact.html"></div>
 
     <div id="home-content" style="display:flex; flex-direction: column;">
 
         <section id="how-it-works">
+            <h2>Welcome to My Doctor - Your Trusted Medical Resource in South Africa</h2>
+            <p>
+            
+            At My Doctor, we understand that access to quality healthcare is essential. We offer virtual
+                consultations and Call-Out sevices, bringing medical expertise right to you. Our team of experienced and
+                dedicated healthcare professionals is here to provide you with personalized and convenient medical care.
+            </p>
             <h2>How it works</h2>
-            <p>Booking a visit from My Doctor Family Practice is a simple and hassle-free process. </p>
+            <ol>
+                <li>Select a date and timeslot </li>
+                <li>Fill in your details</li>
+                <li>Confirm and Pay</li>
+                <li>Click your video link and consult</li>
+            </ol>
+            <p>Consultation hours </p>
+
+            <p> Virtual Consultations *Subject to availability</p>
+                
+            <p>Monday – Friday 09:00 – 20:00<br>
+                Saturdays & Sunday: 09:00 – 13:00<br>
+                Public Holidays: 09:00 – 12h00</p>
+                
+                <p>-Out Sevice *Subject to availability<br>
+                Monday – Friday 09:00 – 20:00<br>
+                Saturdays & Sunday: 09:00 – 12:00</p>
+                
+                <p>Access Quality Healthcare<br>
+                from only </p>
+                
+                <p> R275</p>
+            <!-- <p>Booking a visit from My Doctor Family Practice is a simple and hassle-free process. </p>
             Just follow these steps:
 
             <ol>
@@ -224,111 +297,28 @@
                 Call-Out-Service: 700<br>
                 Follow up Virtual Consultation (within 5 days of your initial consult: R150)<br>
                 Prescription Only: R150<br>
-                Completing Medical Insurance forms at Call out Service: R1000</p>
+                Completing Medical Insurance forms at Call out Service: R1000</p> -->
         </section>
 
-        <section id="booking">
-            <h2>Book an Appointment</h2>
+        <!-- <section id="booking"> -->
+            <!-- <h2>Book an Appointment</h2>
             <form id="bookingForm">
                 <label for="doctor">Select a Doctor:</label>
                 <select id="doctor" name="doctor">
                     <option value="Dr. John Doe">Dr. John Doe (Cardiology)</option>
-                    <option value="Dr. Jane Smith">Dr. Jane Smith (Pediatrics)</option>
+                    <option value="Dr. Jane Smith">Dr. Jane Smith (Pediatrics)</option> -->
                     <!-- Add more doctor options here -->
-                </select>
+                <!-- </select>
                 <label for="date">Select a Date:</label>
                 <input type="date" id="date" name="date" required>
                 <label for="time">Select a Time:</label>
                 <input type="time" id="time" name="time" required>
                 <button type="submit">Book Appointment</button>
-            </form>
-        </section>
+            </form> -->
+        <!-- </section> -->
 
 
-        <section id="faq">
-            <h2>Frequently asked questions</h2>
-            <ol>
-                <li>Can I use my medical Aid?
-
-                    <p>Yes, this will however depend on which medical aid provider you use. Most medical aids are
-                        welcome. Payment for the service is made using the booking service. Once your booking and
-                        payment has been made you may request an invoice to submit to your medical Aid aJer
-                        your consultaions.</p>
-                    <p> Medical Aids Accepted:
-                    <ol>
-                        <li>XXXXXX</li>
-                        <li>XXXXXX</li>
-                        <li>XXXXXX</li>
-                        <li>XXXXXX</li>
-                    </ol>
-
-                    </p>
-                </li>
-                <li>How do I access the video call?
-
-                    <p>You will be sent a confirma6on SMS to the number you’ve provided containing the link to
-                        access your consulta6on. At the 6me selected for you consulta6on, click the link and make
-                        sure your video and mic on your device has been switched on.</p>
-                </li>
-                <li>
-                    How do I arrange for a Call-Out-Service?
-                    <p>When making your selec6on choose [Call-Out-Service] and add your details. One of our
-                        doctors will contact you to assist with your request. Once confirmed we will schedule an
-                        available 6meslot in 24 hours via SMS/email.</p>
-                </li>
-                <li> Which areas are covered by your call-out service?
-                    <p> Standard Call-Out Fee: R700</p>
-                    <ol>
-                        <li> City Bowl:Bo-Kaap, Devil’s Peak Estate, De Waterkant, Foreshore, Gardens, Higgovale,
-                            Lower Vrede (District Six), Oranjezicht, Salt River, Schotsche Kloof, Tamboerskloof,
-                            University Estate, Vredehoek, Walmer Estate (District Six), Woodstock, Zonnebloem
-                            (District Six)</li>
-                        <li>
-                            Southern Suburbs: Bergvliet, Bishopscourt, Claremont, Constan6a, Diep River, Grassy
-                            Park, Harfield Village, Heathfield, Kenilworth, Kenwyn, Kirstenhof, Kreupelbosch,
-                            Lansdowne, Lotus River, Meadowridge, Mowbray, Newlands, Observatory,
-                            Plumstead, Retreat, Rondebosch, Rondebosch East, Rosebank, Southfield, Steenberg,
-                            Tokai, Wynberg, Wejon
-                        </li>
-                        <li>
-                            Cape Flats:Athlone, Crawford, Epping, Hanover Park, Mitchells Plain, Ojery, Pelican
-                            Park, Strandfontein, Belhar, Elsie’s River
-                        </li>
-                    </ol>
-
-
-
-                    <p> Addtional Call-Out Fee: R800</p>
-
-                    <ol>
-                        <li>Atlan6c Seaboard: Bakoven, Bantry Bay, Camps Bay, CliJon, Fresnaye, Green Point,
-                            Hout Bay, Llandudno, Mouille Point, Sea Point, Three Anchor Bay</li>
-
-                        <li>West Coast Suburbs: Bloubergstrand, Milnerton, Montague Gardens, Parklands,
-                            Table View, West Beach</li>
-
-                        <li>Eastern Suburbs:Kuils River, Eersterivier, Somerset West, Gordon’s Bay, Strand</li>
-
-                        <li>Northern Suburbs: Bellville, Brackenfell, Bothasig, Brooklyn, Durbanville, Edgemead,
-                            Goodwood, Kensington, Kraaifontein, Loevenstein, Maitland, Pinelands, Monte Vista,
-                            Panorama, Thornton, Parow, Plajekloof, Rugby</li>
-
-                        <li>Stellenbosch</li>
-
-                </li>
-            </ol>
-
-
-
-            </p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get In Touch
-                +27 73 536 0203
-                info@mydr.co.za</p>
-        </section>
+       
     </div>
     <footer>
         <p>&copy; 2023 Doctor Booking System</p>
