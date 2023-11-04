@@ -57,7 +57,6 @@
             showDoctorsFalse();
             showServicesFalse();
             showHomeFalse();
-            showContactFalse();
             showFaqsFalse();
             showHowToFalse();
             if (document.getElementById("about-content")) {
@@ -76,7 +75,6 @@
             showAboutFalse();
             showServicesFalse();
             showHomeFalse();
-            showContactFalse();
             showFaqsFalse();
             showHowToFalse();
             if (document.getElementById("doctors-content")) {
@@ -96,7 +94,6 @@
             showDoctorsFalse();
             showAboutFalse();
             showHomeFalse();
-            showContactFalse();
             showFaqsFalse();
             showHowToFalse();
             if (document.getElementById("services-content")) {
@@ -117,7 +114,6 @@
             showDoctorsFalse();
             showAboutFalse();
             showServicesFalse();
-            showContactFalse();
             showFaqsFalse();
             showHowToFalse();
             if (document.getElementById("home-content")) {
@@ -133,33 +129,11 @@
             }
         }
 
-        function showContactTrue() {
-            showDoctorsFalse();
-            showAboutFalse();
-            showServicesFalse();
-            showHomeFalse();
-            showFaqsFalse();
-            showHowToFalse();
-
-            if (document.getElementById("contact-content")) {
-
-                document.getElementById("contact-content").style.display = "flex";
-            }
-        }
-
-        function showContactFalse() {
-            if (document.getElementById("contact-content")) {
-
-                document.getElementById("contact-content").style.display = "none"
-            }
-        }
-
         function showFaqsTrue() {
             showDoctorsFalse();
             showAboutFalse();
             showServicesFalse();
             showHomeFalse();
-            showContactFalse();
             showHowToFalse();
 
             if (document.getElementById("faqs-content")) {
@@ -180,7 +154,6 @@
             showAboutFalse();
             showServicesFalse();
             showHomeFalse();
-            showContactFalse();
             showFaqsFalse();
 
             if (document.getElementById("how-content")) {
@@ -216,7 +189,6 @@
                     <li onclick="showServicesTrue()">Services</li>
                     <li onclick="showDoctorsTrue()">How it Works</li>
                     <li onclick="showFaqsTrue()">FAQs</li>
-                    <li onclick="showContactTrue()">Contact Us</li>
                 </ul>
             </nav>
         </div>
@@ -319,9 +291,12 @@
     <div id="services-content" mydr-include-html-snippet="services.html"></div>
     <div id="how-content" mydr-include-html-snippet="how.html"></div>
     <div id="faqs-content" mydr-include-html-snippet="faq.html"></div>
-    <div id="contact-content" mydr-include-html-snippet="contact_us.html"></div>
     <div id="about-content" mydr-include-html-snippet="about.html"></div>
     <footer>
+        <h3>Contact Us</h3>
+        <p>Get In Touch
+            +27 73 536 0203
+            info@mydr.co.za</p>
         <p>&copy; 2023 Doctor Booking System</p>
     </footer>
 
