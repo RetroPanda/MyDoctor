@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
         function includeHTMLSnippet() {
             // Traverse the collection of all
@@ -174,7 +175,49 @@
             showServicesFalse();
             showFaqsFalse();
             showHowToFalse();
-            isBreakpointActive();
+            document.addEventListener("resize",isBreakpointActive);
+
+
+// let showAbout = false;
+
+// function showAboutTrue(){
+//     showAbout=true;
+// }
+// if(showAbout){
+//     document.getElementById("about-content").style.display = "flex"
+// }else{
+//     document.getElementById("about-content").style.display = "none"
+
+// }
+
+var mobile = 768;
+var tablet = 1280;
+var desktop = 1440;
+
+/**
+ * Easily check if a breakpoint is active via JavaScript
+ *
+ * @param {string} breakpoint
+ * @returns {boolean}
+ */
+var isBreakpointActive = function (breakpoint) {
+    var isActive = false;
+    switch (breakpoint) {
+        case 'mobile':
+            isActive = (window.innerWidth <= mobile);
+           
+            break;
+        case 'tablet':
+            isActive = (window.innerWidth > mobile && window.innerWidth <= tablet);
+
+            break;
+        case 'desktop':
+            isActive = (window.innerWidth > tablet);
+            break;
+    }
+    return isActive;
+};
+      
     </script>
 
 </head>
@@ -182,7 +225,24 @@
 <body>
     <header>
 
-        <div>
+<!-- Top Navigation Menu -->
+<div id="burgerMenu" class="topnav">
+    <!-- <img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" /> -->
+    <a href="#home" class="active"><img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" /></a>
+    <div id="myLinks">
+        <li onclick="showHomeTrue()">Home</li>
+        <li onclick="showAboutTrue()">About Us</li>
+        <li onclick="showDoctorsTrue()">Our Doctors</li>
+        <li onclick="showServicesTrue()">Services</li>
+        <li onclick="showHowToTrue()">How it Works</li>
+        <li onclick="showFaqsTrue()">FAQs</li>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
+        <div id="fullMenu">
             <!-- <div style="display: flex; margin-top:-50px"> -->
 
             <img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" />
@@ -336,7 +396,29 @@
     </footer>
 
     <script src="script.js"></script>
-    <script> includeHTMLSnippet();</script>
+    <script> includeHTMLSnippet();
+    if(  isBreakpointActive("mobile") ){
+    document.getElementById("myCarousel").style.display = "none";
+    document.getElementById("burgerMenu").style.display = "";
+    document.getElementById("fullMenu").style.display = "none";
+
+
+}else if( isBreakpointActive("desktop") || isBreakpointActive("tablet")){
+    document.getElementById("myCarousel").style.display = ""
+    document.getElementById("burgerMenu").style.display = "none";
+    document.getElementById("fullMenu").style.display = "";
+
+}
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+    
+    </script>
 </body>
 
 </html>
