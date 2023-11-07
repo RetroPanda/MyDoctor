@@ -169,7 +169,7 @@
                 document.getElementById("how-content").style.display = "none"
             }
         }
-        showHomeTrue();
+      
         showDoctorsFalse();
             showAboutFalse();
             showServicesFalse();
@@ -229,7 +229,7 @@ var isBreakpointActive = function (breakpoint) {
 <div id="burgerMenu" class="topnav">
     <!-- <img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" /> -->
     <a href="#home" class="active"><img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" /></a>
-    <div id="myLinks">
+    <div id="myLinks" >
         <li onclick="showHomeTrue()">Home</li>
         <li onclick="showAboutTrue()">About Us</li>
         <li onclick="showDoctorsTrue()">Our Doctors</li>
@@ -245,10 +245,10 @@ var isBreakpointActive = function (breakpoint) {
         <div id="fullMenu">
             <!-- <div style="display: flex; margin-top:-50px"> -->
 
-            <img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px;" />
+            <img src="logo.svg" style="scale: 0.35; margin-top:-100px;margin-bottom:-100px; padding-left: 2px;" />
             <!-- </div> -->
             <nav>
-                <ul>
+                <ul id="myLinks">
                     <li onclick="showHomeTrue()">Home</li>
                     <li onclick="showAboutTrue()">About Us</li>
                     <li onclick="showDoctorsTrue()">Our Doctors</li>
@@ -259,75 +259,75 @@ var isBreakpointActive = function (breakpoint) {
             </nav>
         </div>
     </header>
-    <div class="container" style="width:100%; padding:0px;">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-            </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div style="display:flex; flex-direction: row;">
-                        <img src="work.jpg" alt="" style="width:50%; height: 360px;">
-                        <div style="padding: 50px; ">
-                           <h1>Welcome to My Doctor Consultations</h1> 
-                           <h2>Your trusted medical resource in South Africa</h2>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="item">
-                    <div style="display:flex; flex-direction: row;">
-                        <img src="laptop.jpg" alt="" style="width:50%; height: 360px;">
-                        <div style="padding: 100px; ">
-                           <h1>Virtual Consultations</h1> 
-                           <h2>Secure end to end video and audio encrypted consultations</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div style="display:flex; flex-direction: row;">
-                        <img src="phone.jpg" alt="" style="width:20%; height: 360px;">
-                        <div style="padding: 100px; ">
-                           <h1>Home Visits</h1> 
-                           <h2>Bringing compassionate medical care to you</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div style="display:flex; flex-direction: row;">
-                        <img src="arm.jpg" alt="" style="width:50%; height: 360px;">
-                        <div style="padding: 100px; ">
-                           <h1>Virtual Consultations</h1> 
-                           <h2>Book a consultation from only R275</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
 
 
 
     <div id="home-content" style="display:flex; flex-direction: column;">
-
+        <div class="container" style="width:100%; padding:0px;">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+    
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div style="display:flex; flex-direction: row;">
+                            <img src="work.jpg" alt="" style="width:50%; height: 360px;">
+                            <div style="padding: 50px; ">
+                               <h1>Welcome to My Doctor Consultations</h1> 
+                               <h2>Your trusted medical resource in South Africa</h2>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="item">
+                        <div style="display:flex; flex-direction: row;">
+                            <img src="laptop.jpg" alt="" style="width:50%; height: 360px;">
+                            <div style="padding: 100px; ">
+                               <h1>Virtual Consultations</h1> 
+                               <h2>Secure end to end video and audio encrypted consultations</h2>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="item">
+                        <div style="display:flex; flex-direction: row;">
+                            <img src="phone.jpg" alt="" style="width:50%; height: 360px;">
+                            <div style="padding: 100px; ">
+                               <h1>Home Visits</h1> 
+                               <h2>Bringing compassionate medical care to you</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div style="display:flex; flex-direction: row;">
+                            <img src="arm.jpg" alt="" style="width:50%; height: 360px;">
+                            <div style="padding: 100px; ">
+                               <h1>Virtual Consultations</h1> 
+                               <h2>Book a consultation from only R275</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
         <section id="how-it-works">
             <h2>Welcome to My Doctor - Your Trusted Medical Resource in South Africa</h2>
             <p>
@@ -336,6 +336,7 @@ var isBreakpointActive = function (breakpoint) {
                 consultations and Call-Out sevices, bringing medical expertise right to you. Our team of experienced and
                 dedicated healthcare professionals is here to provide you with personalized and convenient medical care.
             </p>
+
             <h2>How it works</h2>
             <ol>
                 <li>Select a date and timeslot </li>
@@ -359,7 +360,7 @@ var isBreakpointActive = function (breakpoint) {
                 from only </p>
 
             <p> R275</p>
-
+            <a id="bookNow" href="https://www.recomed.co.za/general-practitioner/cape-town/ray-meas/27865/35743/">Book Now</a>
         </section>
 
         <!-- <section id="booking"> -->
@@ -417,7 +418,8 @@ function myFunction() {
     x.style.display = "block";
   }
 }
-    
+showHomeTrue();
+
     </script>
 </body>
 
