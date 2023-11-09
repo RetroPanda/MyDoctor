@@ -135,6 +135,7 @@ body {
   
   .topnav #myLinks {
     display: none;
+    list-style: none;
   }
   
   .topnav a {
