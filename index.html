@@ -90,6 +90,7 @@
         }
 
         function showBookingTrue() {
+
             showAboutFalse();
             showServicesFalse();
             showHomeFalse();
@@ -98,9 +99,9 @@
             showDoctorsFalse();
 
             if (document.getElementById("booking-content")) {
-
                 document.getElementById("booking-content").style.display = "flex"
             }
+            window.scrollTo(0, 0);
         }
 
         function showDoctorsFalse() {
