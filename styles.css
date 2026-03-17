@@ -21,7 +21,10 @@ img {
 .center {
     text-align: center;
 }
-
+.center-booking {
+    text-align: center;
+    width: 80%;
+}
 h1, h2, h3 {
     font-weight: 650;
     color: #102a43;
