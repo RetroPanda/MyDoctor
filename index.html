@@ -397,6 +397,7 @@ var isBreakpointActive = function (breakpoint) {
            <div id="bookNow" onclick="showBookingTrue()">Book Now</div>
         </section>
 
+
         <!-- <section id="booking"> -->
         <!-- <h2>Book an Appointment</h2>
             <form id="bookingForm">
@@ -418,7 +419,15 @@ var isBreakpointActive = function (breakpoint) {
 
     </div>
     <div id="doctors-content" mydr-include-html-snippet="doctors.html"></div>
-    <div id="booking-content" mydr-include-html-snippet="booking.html"></div>
+    <div id="booking-content">
+        <section class="center" id="booking">
+            <h2>Book now</h2>
+            <p>Select an option below</p>
+            <script src="https://embed.bookem.com/embed.js"></script>
+            <bookem-widget business-id="f4fc19ccde2840c58dd009f301a51911" />
+
+        </section>
+    </div>
     <div id="services-content" mydr-include-html-snippet="services.html"></div>
     <div id="how-content" mydr-include-html-snippet="how.html"></div>
     <div id="faqs-content" mydr-include-html-snippet="faq.html"></div>
