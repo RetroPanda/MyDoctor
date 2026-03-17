@@ -61,6 +61,8 @@
             showHomeFalse();
             showFaqsFalse();
             showHowToFalse();
+            showBookingFalse();
+
             if (document.getElementById("about-content")) {
                 document.getElementById("about-content").style.display = "flex"
             }
@@ -79,9 +81,25 @@
             showHomeFalse();
             showFaqsFalse();
             showHowToFalse();
+            showBookingFalse();
+
             if (document.getElementById("doctors-content")) {
 
                 document.getElementById("doctors-content").style.display = "flex"
+            }
+        }
+
+        function showBookingTrue() {
+            showAboutFalse();
+            showServicesFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showDoctorsFalse();
+
+            if (document.getElementById("booking-content")) {
+
+                document.getElementById("booking-content").style.display = "flex"
             }
         }
 
@@ -92,12 +110,20 @@
             }
         }
 
+        function showBookingFalse() {
+            if (document.getElementById("booking-content")) {
+
+                document.getElementById("booking-content").style.display = "none";
+            }
+        }
+
         function showServicesTrue() {
             showDoctorsFalse();
             showAboutFalse();
             showHomeFalse();
             showFaqsFalse();
             showHowToFalse();
+            showBookingFalse();
             if (document.getElementById("services-content")) {
 
                 document.getElementById("services-content").style.display = "flex"
@@ -118,6 +144,8 @@
             showServicesFalse();
             showFaqsFalse();
             showHowToFalse();
+            showBookingFalse();
+
             if (document.getElementById("home-content")) {
 
                 document.getElementById("home-content").style.display = "flex";
@@ -137,6 +165,7 @@
             showServicesFalse();
             showHomeFalse();
             showHowToFalse();
+            showBookingFalse();
 
             if (document.getElementById("faqs-content")) {
 
@@ -157,6 +186,7 @@
             showServicesFalse();
             showHomeFalse();
             showFaqsFalse();
+            showBookingFalse();
 
             if (document.getElementById("how-content")) {
 
@@ -176,6 +206,8 @@
             showServicesFalse();
             showFaqsFalse();
             showHowToFalse();
+            showBookingFalse();
+
             document.addEventListener("resize",isBreakpointActive);
 
 
@@ -279,7 +311,7 @@ var isBreakpointActive = function (breakpoint) {
                 <div class="carousel-inner">
                     <div class="item active">
                         <div style="display:flex; flex-direction: row;">
-                            <img src="work.png" alt="" style="width:50%; height: 360px;">
+                            <img src="image1.png" alt="" style="width:50%; height: 360px;">
                             <div style="padding: 50px; ">
                                <h1>Welcome to My Doctor Family Practice</h1> 
                                <h2>Affordable and compassionate online, in-person and home visit medical consultations for you and your loved ones.</h2>
@@ -290,7 +322,7 @@ var isBreakpointActive = function (breakpoint) {
     
                     <div class="item">
                         <div style="display:flex; flex-direction: row;">
-                            <img src="laptop.png" alt="" style="width:50%; height: 360px;">
+                            <img src="image2.png" alt="" style="width:50%; height: 360px;">
                             <div style="padding: 50px; ">
                                <h1>Book Online</h1> 
                                <h2>Conveniently book your required service for any available time slot using our online booking platform.</h2>
@@ -300,9 +332,9 @@ var isBreakpointActive = function (breakpoint) {
     
                     <div class="item">
                         <div style="display:flex; flex-direction: row;">
-                            <img src="heart.png" alt="" style="width:40%; height: 350px;">
-                            <img src="hayley.png" alt="" style="width:40%; height: 350px;">
-                            <img src="tamzin.png" alt="" style="width:40%; height: 350px;">
+                            <img src="image3.png" alt="" style="width:50%; height: 360px;">
+                            <!-- <img src="hayley.png" alt="" style="width:40%; height: 350px;">
+                            <img src="tamzin.png" alt="" style="width:40%; height: 350px;"> -->
                             <div style="padding: 50px 50px 35px 50px; ">
                                <h2>Multi - Disciplinary Care</h2> 
                                <h3>Access to on-site Physiotherapy at Tamzin Vermeulen Physiotherapy and Dental services with Dr Haley James</h3>
@@ -311,7 +343,7 @@ var isBreakpointActive = function (breakpoint) {
                     </div>
                     <div class="item">
                         <div style="display:flex; flex-direction: row;">
-                            <img src="yellowdot.png" alt="" style="width:50%; height: 360px;">
+                            <img src="image4.png" alt="" style="width:50%; height: 360px;">
                             <div style="padding: 50px; ">
                                <h1>Reproductive and sexual Health</h1> 
                                <h2>Gender Affirming Healthcare, ARV'S, PrEP and Family Planning services available
@@ -362,7 +394,7 @@ var isBreakpointActive = function (breakpoint) {
 
             <p><i>*practice hours subject to change</i></p>
            <br>
-            <a id="bookNow" href="https://reserveit.co.za/book/my-doctor?noHeader=true">Book Now</a>
+            <a id="bookNow" href=""> <li onclick="showBookingTrue()">Book Now</li></a>
         </section>
 
         <!-- <section id="booking"> -->
@@ -386,6 +418,7 @@ var isBreakpointActive = function (breakpoint) {
 
     </div>
     <div id="doctors-content" mydr-include-html-snippet="doctors.html"></div>
+    <div id="booking-content" mydr-include-html-snippet="booking.html"></div>
     <div id="services-content" mydr-include-html-snippet="services.html"></div>
     <div id="how-content" mydr-include-html-snippet="how.html"></div>
     <div id="faqs-content" mydr-include-html-snippet="faq.html"></div>
