@@ -14,8 +14,11 @@
     <script>
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const idValue = urlParams.get('showBooking');
-            showBookingTrue();
+            const showValue = urlParams.get('showBooking');
+            if(showValue=="true"||showValue==true){
+
+                showBookingTrue();
+            }
         };
         function includeHTMLSnippet() {
             // Traverse the collection of all
