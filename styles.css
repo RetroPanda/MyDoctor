@@ -385,7 +385,8 @@ footer p {
 }
 
 #myCarousel .item:nth-child(3) img {
-    width: 30% !important;
+    margin-top: 2%;
+    width: 40% !important;
     height: auto !important;
 }
 
