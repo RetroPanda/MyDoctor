@@ -323,7 +323,7 @@ footer p {
 
 /* -------- About page map responsiveness -------- */
 .lrg {
- min-width: "80%";
+ min-width: 80%;
 }
 .mapouter,
 .gmap_canvas,
