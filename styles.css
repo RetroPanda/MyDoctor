@@ -97,6 +97,119 @@ nav ul li:hover::after {
     width: 100%;
 }
 
+/* Desktop: Services dropdown (hover) */
+nav ul li.nav-dropdown {
+    position: relative;
+}
+
+nav ul li.nav-dropdown::after {
+    display: none;
+}
+
+nav ul li.nav-dropdown .nav-dropdown__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 15px;
+    color: #4a5568;
+    transition: color 0.2s ease;
+}
+
+nav ul li.nav-dropdown .nav-dropdown__toggle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0C663C;
+    transition: width 0.2s ease;
+}
+
+nav ul li.nav-dropdown:hover .nav-dropdown__toggle,
+nav ul li.nav-dropdown:focus-within .nav-dropdown__toggle {
+    color: #0C663C;
+}
+
+nav ul li.nav-dropdown:hover .nav-dropdown__toggle::after,
+nav ul li.nav-dropdown:focus-within .nav-dropdown__toggle::after {
+    width: 100%;
+}
+
+.nav-dropdown__caret {
+    font-size: 10px;
+    opacity: 0.75;
+}
+
+.nav-dropdown__menu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 6px);
+    min-width: 240px;
+    padding: 8px 0;
+    margin: 0;
+    list-style: none;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    z-index: 100;
+}
+
+nav ul li.nav-dropdown:hover .nav-dropdown__menu,
+nav ul li.nav-dropdown:focus-within .nav-dropdown__menu {
+    display: block;
+}
+
+.nav-dropdown__menu li {
+    display: block;
+    margin: 0;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: left;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-dropdown__menu li:hover {
+    background: #f0faf6;
+    color: #0C663C;
+}
+
+/* Mobile burger: Services sub-items */
+.nav-dropdown-mobile > span {
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.nav-dropdown-mobile__sub {
+    list-style: none;
+    margin: 6px 0 0 12px;
+    padding: 0 0 0 12px;
+    border-left: 2px solid #e2e8f0;
+}
+
+.nav-dropdown-mobile__sub li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+}
+
+.nav-dropdown-mobile__sub li:hover {
+    color: #0C663C;
+}
+
 /* Mobile top nav (burger) */
 .mobile-container {
     max-width: 480px;
@@ -195,6 +308,15 @@ li {
 .column-of-6:hover {
     transform: translateY(-4px);
     box-shadow: 0 22px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* Deep links from Services menu — clear sticky header */
+#service-consultations,
+#service-assessments,
+#service-gender-affirming,
+#service-in-room,
+#service-payment {
+    scroll-margin-top: 120px;
 }
 
 .home-six-widgets-container a {

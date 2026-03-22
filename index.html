@@ -147,6 +147,33 @@
             }
         }
 
+        function scrollToServiceAnchor(anchorId) {
+            var attempts = 0;
+            function tryScroll() {
+                var el = document.getElementById(anchorId);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+                attempts += 1;
+                if (attempts < 50) {
+                    setTimeout(tryScroll, 50);
+                }
+            }
+            tryScroll();
+        }
+
+        function showServiceSection(anchorId) {
+            showServicesTrue();
+            scrollToServiceAnchor(anchorId);
+            if (typeof isBreakpointActive === "function" && isBreakpointActive("mobile")) {
+                var x = document.getElementById("myLinks");
+                if (x && x.closest && x.closest(".topnav")) {
+                    x.style.display = "none";
+                }
+            }
+        }
+
         function showHomeTrue() {
             showDoctorsFalse();
             showAboutFalse();
@@ -275,7 +302,16 @@ var isBreakpointActive = function (breakpoint) {
         <li onclick="showHomeTrue()">Home</li>
         <li onclick="showAboutTrue()">About Us</li>
         <li onclick="showDoctorsTrue()">Our Doctors</li>
-        <li onclick="showServicesTrue()">Services</li>
+        <li class="nav-dropdown-mobile">
+            <span onclick="showServicesTrue()">Services</span>
+            <ul class="nav-dropdown-mobile__sub">
+                <li onclick="showServiceSection('service-consultations')">Consultations</li>
+                <li onclick="showServiceSection('service-assessments')">Assessments</li>
+                <li onclick="showServiceSection('service-gender-affirming')">Gender-Affirming Care</li>
+                <li onclick="showServiceSection('service-in-room')">In-Room Procedures</li>
+                <li onclick="showServiceSection('service-payment')">Payment &amp; Billing</li>
+            </ul>
+        </li>
         <li onclick="showHowToTrue()">How it Works</li>
         <li onclick="showFaqsTrue()">FAQs</li>
     </div>
@@ -294,7 +330,16 @@ var isBreakpointActive = function (breakpoint) {
                     <li onclick="showHomeTrue()">Home</li>
                     <li onclick="showAboutTrue()">About Us</li>
                     <li onclick="showDoctorsTrue()">Our Doctors</li>
-                    <li onclick="showServicesTrue()">Services</li>
+                    <li class="nav-dropdown" aria-haspopup="true">
+                        <span class="nav-dropdown__toggle" onclick="showServicesTrue()">Services <span class="nav-dropdown__caret" aria-hidden="true">▾</span></span>
+                        <ul class="nav-dropdown__menu" role="menu">
+                            <li role="menuitem" onclick="showServiceSection('service-consultations')">Consultations</li>
+                            <li role="menuitem" onclick="showServiceSection('service-assessments')">Assessments</li>
+                            <li role="menuitem" onclick="showServiceSection('service-gender-affirming')">Gender-Affirming Care</li>
+                            <li role="menuitem" onclick="showServiceSection('service-in-room')">In-Room Procedures</li>
+                            <li role="menuitem" onclick="showServiceSection('service-payment')">Payment &amp; Billing</li>
+                        </ul>
+                    </li>
                     <li onclick="showHowToTrue()">How it Works</li>
                     <li onclick="showFaqsTrue()">FAQs</li>
                 </ul>
