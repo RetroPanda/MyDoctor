@@ -138,6 +138,7 @@
                 document.getElementById("booking-content").style.display = "flex"
             }
             window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
         }
 
         function showDoctorsFalse() {
@@ -537,7 +538,7 @@ var isBreakpointActive = function (breakpoint) {
 
             <p><i>*practice hours subject to change</i></p>
            <br>
-           <div id="bookNow" onclick="showBookingTrue()">Book Now</div>
+           <button type="button" class="book-now-link" onclick="showBookingTrue()">Book Now</button>
         </section>
 
 
