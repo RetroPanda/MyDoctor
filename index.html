@@ -63,6 +63,31 @@
             }
         };
 
+        function hideAllServiceCategoryPanels() {
+            var ids = [
+                "consultations-content",
+                "assessments-content",
+                "care-content",
+                "procedures-content",
+                "billing-service-content"
+            ];
+            for (var j = 0; j < ids.length; j++) {
+                var node = document.getElementById(ids[j]);
+                if (node) {
+                    node.style.display = "none";
+                }
+            }
+        }
+
+        function closeMobileNavIfMobile() {
+            if (typeof isBreakpointActive === "function" && isBreakpointActive("mobile")) {
+                var x = document.getElementById("myLinks");
+                if (x && x.closest && x.closest(".topnav")) {
+                    x.style.display = "none";
+                }
+            }
+        }
+
         function showAboutTrue() {
             showDoctorsFalse();
             showServicesFalse();
@@ -70,6 +95,7 @@
             showFaqsFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("about-content")) {
                 document.getElementById("about-content").style.display = "flex"
@@ -90,6 +116,7 @@
             showFaqsFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("doctors-content")) {
 
@@ -105,6 +132,7 @@
             showFaqsFalse();
             showHowToFalse();
             showDoctorsFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("booking-content")) {
                 document.getElementById("booking-content").style.display = "flex"
@@ -133,6 +161,7 @@
             showFaqsFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
             if (document.getElementById("services-content")) {
 
                 document.getElementById("services-content").style.display = "flex"
@@ -147,31 +176,89 @@
             }
         }
 
-        function scrollToServiceAnchor(anchorId) {
-            var attempts = 0;
-            function tryScroll() {
-                var el = document.getElementById(anchorId);
-                if (el) {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    return;
-                }
-                attempts += 1;
-                if (attempts < 50) {
-                    setTimeout(tryScroll, 50);
-                }
+        function showConsultationsTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showBookingFalse();
+            showServicesFalse();
+            hideAllServiceCategoryPanels();
+            var el = document.getElementById("consultations-content");
+            if (el) {
+                el.style.display = "flex";
             }
-            tryScroll();
+            window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
         }
 
-        function showServiceSection(anchorId) {
-            showServicesTrue();
-            scrollToServiceAnchor(anchorId);
-            if (typeof isBreakpointActive === "function" && isBreakpointActive("mobile")) {
-                var x = document.getElementById("myLinks");
-                if (x && x.closest && x.closest(".topnav")) {
-                    x.style.display = "none";
-                }
+        function showAssessmentsTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showBookingFalse();
+            showServicesFalse();
+            hideAllServiceCategoryPanels();
+            var el = document.getElementById("assessments-content");
+            if (el) {
+                el.style.display = "flex";
             }
+            window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
+        }
+
+        function showCareTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showBookingFalse();
+            showServicesFalse();
+            hideAllServiceCategoryPanels();
+            var el = document.getElementById("care-content");
+            if (el) {
+                el.style.display = "flex";
+            }
+            window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
+        }
+
+        function showProceduresTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showBookingFalse();
+            showServicesFalse();
+            hideAllServiceCategoryPanels();
+            var el = document.getElementById("procedures-content");
+            if (el) {
+                el.style.display = "flex";
+            }
+            window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
+        }
+
+        function showBillingServiceTrue() {
+            showDoctorsFalse();
+            showAboutFalse();
+            showHomeFalse();
+            showFaqsFalse();
+            showHowToFalse();
+            showBookingFalse();
+            showServicesFalse();
+            hideAllServiceCategoryPanels();
+            var el = document.getElementById("billing-service-content");
+            if (el) {
+                el.style.display = "flex";
+            }
+            window.scrollTo(0, 0);
+            closeMobileNavIfMobile();
         }
 
         function showHomeTrue() {
@@ -181,6 +268,7 @@
             showFaqsFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("home-content")) {
 
@@ -202,6 +290,7 @@
             showHomeFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("faqs-content")) {
 
@@ -223,6 +312,7 @@
             showHomeFalse();
             showFaqsFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             if (document.getElementById("how-content")) {
 
@@ -243,6 +333,7 @@
             showFaqsFalse();
             showHowToFalse();
             showBookingFalse();
+            hideAllServiceCategoryPanels();
 
             document.addEventListener("resize",isBreakpointActive);
 
@@ -305,11 +396,11 @@ var isBreakpointActive = function (breakpoint) {
         <li class="nav-dropdown-mobile">
             <span onclick="showServicesTrue()">Services</span>
             <ul class="nav-dropdown-mobile__sub">
-                <li onclick="showServiceSection('service-consultations')">Consultations</li>
-                <li onclick="showServiceSection('service-assessments')">Assessments</li>
-                <li onclick="showServiceSection('service-gender-affirming')">Gender-Affirming Care</li>
-                <li onclick="showServiceSection('service-in-room')">In-Room Procedures</li>
-                <li onclick="showServiceSection('service-payment')">Payment &amp; Billing</li>
+                <li onclick="showConsultationsTrue()">Consultations</li>
+                <li onclick="showAssessmentsTrue()">Assessments</li>
+                <li onclick="showCareTrue()">Gender-Affirming Care</li>
+                <li onclick="showProceduresTrue()">In-Room Procedures</li>
+                <li onclick="showBillingServiceTrue()">Payment &amp; Billing</li>
             </ul>
         </li>
         <li onclick="showHowToTrue()">How it Works</li>
@@ -333,11 +424,11 @@ var isBreakpointActive = function (breakpoint) {
                     <li class="nav-dropdown" aria-haspopup="true">
                         <span class="nav-dropdown__toggle" onclick="showServicesTrue()">Services <span class="nav-dropdown__caret" aria-hidden="true">▾</span></span>
                         <ul class="nav-dropdown__menu" role="menu">
-                            <li role="menuitem" onclick="showServiceSection('service-consultations')">Consultations</li>
-                            <li role="menuitem" onclick="showServiceSection('service-assessments')">Assessments</li>
-                            <li role="menuitem" onclick="showServiceSection('service-gender-affirming')">Gender-Affirming Care</li>
-                            <li role="menuitem" onclick="showServiceSection('service-in-room')">In-Room Procedures</li>
-                            <li role="menuitem" onclick="showServiceSection('service-payment')">Payment &amp; Billing</li>
+                            <li role="menuitem" onclick="showConsultationsTrue()">Consultations</li>
+                            <li role="menuitem" onclick="showAssessmentsTrue()">Assessments</li>
+                            <li role="menuitem" onclick="showCareTrue()">Gender-Affirming Care</li>
+                            <li role="menuitem" onclick="showProceduresTrue()">In-Room Procedures</li>
+                            <li role="menuitem" onclick="showBillingServiceTrue()">Payment &amp; Billing</li>
                         </ul>
                     </li>
                     <li onclick="showHowToTrue()">How it Works</li>
@@ -481,6 +572,11 @@ var isBreakpointActive = function (breakpoint) {
         </section>
     </div>
     <div id="services-content" mydr-include-html-snippet="services.html"></div>
+    <div id="consultations-content" mydr-include-html-snippet="consultations.html"></div>
+    <div id="assessments-content" mydr-include-html-snippet="assessments.html"></div>
+    <div id="care-content" mydr-include-html-snippet="care.html"></div>
+    <div id="procedures-content" mydr-include-html-snippet="procedures.html"></div>
+    <div id="billing-service-content" mydr-include-html-snippet="billing.html"></div>
     <div id="how-content" mydr-include-html-snippet="how.html"></div>
     <div id="faqs-content" mydr-include-html-snippet="faq.html"></div>
     <div id="about-content" mydr-include-html-snippet="about.html"></div>
