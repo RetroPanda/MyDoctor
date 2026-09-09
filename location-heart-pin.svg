@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-label="Location with heart illustration">
+  <defs>
+    <style>
+      .outline-pink { stroke: #f36ec3; stroke-width: 20; fill: #f7bfdc; stroke-linecap: round; stroke-linejoin: round; }
+      .outline-cyan { stroke: #45c9ee; stroke-width: 18; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .outline-green { stroke: #4aa76e; stroke-width: 12; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-white { fill: #f8f8f8; }
+    </style>
+  </defs>
+
+  <g transform="translate(0,20)">
+    <path d="M350 60
+             C245 60 160 145 160 250
+             C160 382 298 527 350 592
+             C402 527 540 382 540 250
+             C540 145 455 60 350 60 Z"
+          class="outline-pink"/>
+
+    <circle cx="350" cy="250" r="155" class="fill-white"/>
+
+    <path d="M295 195
+             C285 160 250 163 232 190
+             C214 216 221 256 260 286
+             C280 302 300 314 317 328
+             C334 314 354 302 374 286
+             C413 256 420 216 402 190
+             C384 163 349 160 339 195 Z"
+          class="outline-green"/>
+
+    <path d="M311 230 l22 22 l-22 22 l-22 -22 z" class="outline-green"/>
+
+    <path d="M390 150 C420 150 445 175 445 205 C445 235 423 258 390 279 C357 258 335 235 335 205 C335 175 360 150 390 150 Z" class="outline-green" fill="none" opacity="0.8"/>
+    <path d="M390 165 L390 245 M355 205 L425 205" class="outline-green" opacity="0.8"/>
+
+    <path d="M350 598 C230 598 160 538 160 538" class="outline-cyan"/>
+    <path d="M350 598 C470 598 540 538 540 538" class="outline-cyan"/>
+    <path d="M190 540 C220 610 290 645 350 645 C410 645 480 610 510 540" class="outline-cyan" fill="none"/>
+  </g>
+</svg>

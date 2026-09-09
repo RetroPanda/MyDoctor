@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500" role="img" aria-label="Virtual consultation illustration">
+  <defs>
+    <style>
+      .stroke-pink { stroke: #f36ec3; stroke-width: 12; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-cyan { stroke: #42c8ef; stroke-width: 12; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-green { stroke: #4aa76e; stroke-width: 8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .fill-white { fill: #f8f8f8; }
+      .fill-pink { fill: #f8b8d9; }
+      .fill-cyan { fill: #8edff5; }
+    </style>
+  </defs>
+
+  <g transform="translate(60,55)">
+    <g>
+      <rect x="120" y="40" width="280" height="330" rx="34" class="fill-white stroke-pink"/>
+      <rect x="145" y="68" width="230" height="275" rx="22" class="stroke-cyan" fill="none"/>
+
+      <g transform="translate(165,130)">
+        <circle cx="15" cy="15" r="11" fill="#49c5ef" opacity="0.9"/>
+        <circle cx="40" cy="15" r="11" fill="#49c5ef" opacity="0.9"/>
+        <circle cx="65" cy="15" r="11" fill="#49c5ef" opacity="0.9"/>
+      </g>
+
+      <path d="M225 160
+               C205 130, 180 130, 165 155
+               C150 180, 163 210, 190 225
+               C200 232, 210 238, 218 246
+               C226 238, 236 232, 246 225
+               C273 210, 286 180, 271 155
+               C256 130, 231 130, 211 160 Z"
+            class="stroke-green" fill="none"/>
+
+      <path d="M260 148 l18 18 l-18 18 l-18 -18 z" class="stroke-green" fill="none"/>
+      <path d="M164 180 l42 0" class="stroke-green"/>
+      <path d="M184 160 l0 42" class="stroke-green"/>
+
+      <g transform="translate(210,230)">
+        <circle cx="40" cy="0" r="36" class="stroke-cyan" fill="none"/>
+        <path d="M40 15 L40 35 M25 25 L55 25" class="stroke-cyan"/>
+      </g>
+
+      <rect x="180" y="330" width="120" height="22" rx="11" class="fill-cyan" opacity="0.9"/>
+    </g>
+
+    <g transform="translate(350,20)">
+      <path d="M140 85
+               C140 40, 175 20, 215 20
+               C255 20, 290 40, 290 85
+               C290 118, 268 140, 238 170
+               C225 182, 215 192, 211 196
+               C207 192, 197 182, 184 170
+               C154 140, 132 118, 132 85 Z"
+            class="stroke-cyan" fill="none"/>
+      <path d="M215 80
+               C205 60, 182 58, 167 76
+               C152 95, 156 123, 184 138
+               C196 145, 206 149, 214 158
+               C222 149, 232 145, 244 138
+               C272 123, 276 95, 261 76
+               C246 58, 223 60, 214 80 Z"
+            class="stroke-green" fill="none"/>
+      <path d="M214 100 l18 18 l-18 18 l-18 -18 z" class="stroke-green" fill="none"/>
+    </g>
+  </g>
+</svg>
